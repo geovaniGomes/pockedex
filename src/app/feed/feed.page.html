@@ -1,0 +1,35 @@
+<ion-searchbar placeholder="Filtar Pokemons"
+              [(ngModel)]="queryText"
+              (ionInput)="getPokemons($event)"
+              clearInput>
+              
+            </ion-searchbar>
+<ion-content padding> 
+
+<ion-card  *ngFor="let pokemon of lista_pokemons">
+  <ion-item>
+    <ion-avatar item-start>
+      <img [src]="pokemon.foto_trainner">
+    </ion-avatar>
+    <ion-item>
+    
+    <h2 style="width: 100%;text-align: center;">Treinador:{{" "+pokemon.trainner}}</h2>
+    </ion-item>
+  </ion-item>
+  
+  <img [src]="pokemon.foto_poke">
+
+  <ion-card-content>
+   <ion-item>
+    <h3>Name: {{pokemon.name}}</h3>
+   </ion-item>
+    <ion-item>
+    
+    <h3> Type: {{pokemon.type}}</h3>
+   </ion-item>
+     <ion-item>
+    <h3> Value: {{pokemon.value}}</h3>
+   </ion-item>
+  </ion-card-content>
+</ion-card>
+</ion-content>
